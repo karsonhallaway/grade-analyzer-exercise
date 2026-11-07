@@ -10,7 +10,6 @@ d_grades = []
 f_grades = []
 
 # number of passing and failing grades
-
 passing_count = 0
 failing_count = 0
 
