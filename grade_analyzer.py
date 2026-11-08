@@ -75,7 +75,7 @@ while scores:
             break
         new_score = int(new_score)
         
-        if new_score >= 100:
+        if new_score > 100:
             print("Entry must be between 1 - 100. Try again")
         elif new_score >= 1:
             scores.append(new_score)
