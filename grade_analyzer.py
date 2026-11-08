@@ -89,9 +89,7 @@ while scores:
     
     print(f"\nFinal average: {float(new_avg):.1f}")
     
-__name__ = "__main__"
 
-main()
 
         
     
