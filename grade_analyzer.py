@@ -54,21 +54,23 @@ def main():
     print(f"Average: {float(avg):.1f}")
     print(f"Highest: {highest_score}")
     print(f"Lowest: {lowest_score}")
-    print(f"Passing: {len(passing_count)} ({sum(passing_count) / float(len(passing_count)):.1f})")
-    print(f"Failing: {len(failing_count)} ({sum(failing_count) / float(len(failing_count)):.1f})")
+    print(f"Passing: {len(passing_count) / total_scores * 100}%")
+    print(f"Failing: {len(failing_count) / total_scores * 100}%")
     
     print("\nGrade Distribution:")
     print(f"A: {len(a_grades)} students")
-    print(f"A: {len(b_grades)} students")
+    print(f"B: {len(b_grades)} students")
     print(f"C: {len(c_grades)} students")
     print(f"D: {len(d_grades)} students")
     print(f"F: {len(f_grades)} students")
 
-while scores:
+main()
+
     
-    main()
-        
+while scores:
+       
     print("\n--- Add More Scores ---")
+
     try:
         new_score = input("Enter a new score (or 'done' to quit): ").strip() 
         if new_score.lower() == 'done':
@@ -77,17 +79,21 @@ while scores:
         
         if new_score > 100:
             print("Entry must be between 1 - 100. Try again")
-        elif new_score >= 1:
+        elif new_score >= 0:
             scores.append(new_score)
         else:
             print("Entry must be positive. Try again.")
-        new_avg = sum(scores) / len(scores)
     except ValueError:
         print("Invalid score. Please enter a number or 'done'.")
+        
+    new_avg = sum(scores) / len(scores)
         
     print(f"Updated average: {float(new_avg):.1f}")
     
     print(f"\nFinal average: {float(new_avg):.1f}")
+    
+
+
     
 
 
