@@ -12,15 +12,11 @@ def analyze(scores):
     d_grades = []
     f_grades = []
 
-    # number of passing and failing grades
-    passing_count = []
-    failing_count = []
+    # number of passing grades
+    passing_count = sum(score >= 60 for score in scores)
+    failing_count = len(scores) - passing_count 
+    
 
-    for score in scores:
-        if score >= 60:
-            passing_count.append(score)
-        else:
-            failing_count.append(score)
 
     # loop through scores. append each score to letter grade list.
     for score in scores:
@@ -46,8 +42,8 @@ def analyze(scores):
     print(f"Average: {avg:.1f}")
     print(f"Highest: {highest_score}")
     print(f"Lowest: {lowest_score}")
-    print(f"Passing: {len(passing_count) / total_scores:.1%}")
-    print(f"Failing: {len(failing_count) / total_scores:.1%}")
+    print(f"Passing: {passing_count / total_scores:.1%}")
+    print(f"Failing: {failing_count / total_scores:.1%}")
 
     print("\n--- Grade Distribution:\n")
     print(f"A: {len(a_grades)} students")
