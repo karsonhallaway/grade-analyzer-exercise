@@ -59,29 +59,33 @@ def analyze(scores):
 
 analyze(scores)
 
-while True:
-    print("\n--- Add More Scores ---")
+def main():
+    while True:
+        print("\n--- Add More Scores ---")
+        new_avg = sum(scores) / len(scores) 
 
-    try:
-        new_score = input("Enter a new score (or 'done' to quit): ").strip()
-        if new_score.lower() == 'done':
-            break
-        new_score = int(new_score)
+        try:
+            new_score = input("Enter a new score (or 'done' to quit): ").strip()
+            if new_score.lower() == 'done':
+                break
+            new_score = int(new_score)
 
-        if new_score > 100:
-            print("Entry must be between 0 - 100. Try again")
-        elif new_score >= 0:
-            scores.append(new_score)
-        else:
-            print("Entry must be positive. Try again.")
-    except ValueError:
-        print("Invalid score. Please enter a number or 'done'.")
-        
-    new_avg = sum(scores) / len(scores) 
+            if new_score > 100:
+                print("Entry must be between 0 - 100. Try again")
+            elif new_score >= 0:
+                scores.append(new_score)
+            else:
+                print("Entry must be positive. Try again.")
+        except ValueError:
+            print("Invalid score. Please enter a number or 'done'.")
+            
 
-    print(f"Updated average: {sum(scores) / len(scores):.1f}")
+        print(f"Updated average: {sum(scores) / len(scores):.1f}")
 
-# show the full analysis again with the new scores included
-analyze(scores)
+    # show the full analysis again with the new scores included
+    analyze(scores)
 
-print(f"\nFinal Average: {new_avg:.1f}\n")
+    print(f"\nFinal Average: {new_avg:.1f}\n")
+
+if __name__ == "__main__":
+    main() 
