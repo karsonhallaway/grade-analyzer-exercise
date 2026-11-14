@@ -90,7 +90,9 @@ while scores:
         
     print(f"Updated average: {float(new_avg):.1f}")
     
-    print(f"\nFinal average: {float(new_avg):.1f}")
+print(f"\nFinal average: {float(new_avg):.1f}")
+
+    
     
 
 
