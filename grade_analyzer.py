@@ -76,8 +76,12 @@ while True:
             print("Entry must be positive. Try again.")
     except ValueError:
         print("Invalid score. Please enter a number or 'done'.")
+        
+    new_avg = sum(scores) / len(scores) 
 
     print(f"Updated average: {sum(scores) / len(scores):.1f}")
 
 # show the full analysis again with the new scores included
 analyze(scores)
+
+print(f"\nFinal Average: {new_avg:.1f}\n")
